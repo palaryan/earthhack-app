@@ -44,3 +44,4 @@ target 'EarthxHack2020COVID19Tracker' do
   # react-native-cli autolinking
   use_native_modules!
 end
+pod 'GeoSpark'

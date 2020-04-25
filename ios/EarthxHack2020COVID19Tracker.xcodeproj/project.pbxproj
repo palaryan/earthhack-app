@@ -15,14 +15,15 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3DE4DAD41476765101945408 /* libPods-EarthxHack2020COVID19Tracker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43FF9D506E70904424FA7E9 /* libPods-EarthxHack2020COVID19Tracker.a */; };
+		FB71AFC22454FDC100EA40BD /* RNGeoSpark.m in Sources */ = {isa = PBXBuildFile; fileRef = FB71AFC02454FDC100EA40BD /* RNGeoSpark.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		0731D3B524204D62009CAE85 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Expo.plist; path = EarthxHack2020COVID19Tracker/Supporting/Expo.plist; sourceTree = "<group>"; };
-		07C2E6E3243282B30028AF0A /* app.manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.manifest; path = "EarthxHack2020COVID19Tracker/Supporting/app.manifest"; sourceTree = "<group>"; };
-		07C2E6E4243282B30028AF0A /* app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.bundle; path = "EarthxHack2020COVID19Tracker/Supporting/app.bundle"; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* EarthxHack2020COVID19Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EarthxHack2020COVID19Tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		07C2E6E3243282B30028AF0A /* app.manifest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.manifest; path = EarthxHack2020COVID19Tracker/Supporting/app.manifest; sourceTree = "<group>"; };
+		07C2E6E4243282B30028AF0A /* app.bundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = app.bundle; path = EarthxHack2020COVID19Tracker/Supporting/app.bundle; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* com.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = com.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = EarthxHack2020COVID19Tracker/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = EarthxHack2020COVID19Tracker/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -35,6 +36,8 @@
 		D43FF9D506E70904424FA7E9 /* libPods-EarthxHack2020COVID19Tracker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EarthxHack2020COVID19Tracker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FB71AFC02454FDC100EA40BD /* RNGeoSpark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNGeoSpark.m; path = "../node_modules/react-native-geospark/ios/RNGeoSpark.m"; sourceTree = "<group>"; };
+		FB71AFC12454FDC100EA40BD /* RNGeoSpark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNGeoSpark.h; path = "../node_modules/react-native-geospark/ios/RNGeoSpark.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB71AFC12454FDC100EA40BD /* RNGeoSpark.h */,
+				FB71AFC02454FDC100EA40BD /* RNGeoSpark.m */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
@@ -110,7 +115,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* EarthxHack2020COVID19Tracker.app */,
+				13B07F961A680F5B00A75B9A /* com.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -135,7 +140,7 @@
 			);
 			name = EarthxHack2020COVID19Tracker;
 			productName = "Hello World";
-			productReference = 13B07F961A680F5B00A75B9A /* EarthxHack2020COVID19Tracker.app */;
+			productReference = 13B07F961A680F5B00A75B9A /* com.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -244,6 +249,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB71AFC22454FDC100EA40BD /* RNGeoSpark.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
@@ -269,6 +275,7 @@
 			baseConfigurationReference = 3B47C5AFCB8BDE514B7D1AC6 /* Pods-EarthxHack2020COVID19Tracker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = EarthxHack2020COVID19Tracker/Info.plist;
@@ -278,10 +285,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "safespot.hackers.com";
+				PRODUCT_BUNDLE_IDENTIFIER = safespot.hackers.com;
 				PRODUCT_NAME = com;
 				VERSIONING_SYSTEM = "apple-generic";
-				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
 			};
 			name = Debug;
 		};
@@ -290,6 +296,7 @@
 			baseConfigurationReference = 8AC623DBF3A3E2CB072F81F2 /* Pods-EarthxHack2020COVID19Tracker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = EarthxHack2020COVID19Tracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -298,10 +305,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "safespot.hackers.com";
+				PRODUCT_BUNDLE_IDENTIFIER = safespot.hackers.com;
 				PRODUCT_NAME = com;
 				VERSIONING_SYSTEM = "apple-generic";
-				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
 			};
 			name = Release;
 		};
@@ -332,6 +338,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -354,10 +361,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				PRODUCT_BUNDLE_IDENTIFIER = "safespot.hackers.com";
+				PRODUCT_BUNDLE_IDENTIFIER = safespot.hackers.com;
 				PRODUCT_NAME = com;
-				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
@@ -388,6 +394,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -402,11 +409,10 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = safespot.hackers.com;
+				PRODUCT_NAME = com;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = "safespot.hackers.com";
-				PRODUCT_NAME = com;
-				CODE_SIGN_ENTITLEMENTS = EarthxHack2020COVID19Tracker/com.entitlements;
 			};
 			name = Release;
 		};
