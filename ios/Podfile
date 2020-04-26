@@ -45,3 +45,4 @@ target 'EarthxHack2020COVID19Tracker' do
   use_native_modules!
 end
 pod 'GeoSpark'
+pod 'react-native-geolocation', path: '../node_modules/@react-native-community/geolocation'
