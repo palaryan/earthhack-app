@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Geolocation from '@react-native-community/geolocation';
+Geolocation.setRNConfiguration(config);
 import {
     Platform,
     StyleSheet,
@@ -35,6 +37,8 @@ export default class App extends Component {
       this.setState({ points: json });
     })
     .catch((error) => console.error(error))
+
+    geolocation.getCurrentPosition(response => console.log(response), [geo_error], [geo_options]);
   }
 
 
