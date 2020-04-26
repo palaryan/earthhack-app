@@ -185,6 +185,7 @@ dependencies {
     implementation project(':react-native-geospark')
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "com.facebook.react:react-native:+"  // From node_modules
+    implementation project(':react-native-maps')
     addUnimodulesDependencies()
 
     if (enableHermes) {
