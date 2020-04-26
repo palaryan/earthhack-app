@@ -1,1 +1,1 @@
-# earthhack-app
+# SafeSpot
