@@ -6,6 +6,7 @@ import android.net.Uri;
 
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
+import com.github.reactnativecommunity.location.RNLocationPackage;
 import com.reactnativecommunity.geolocation.GeolocationPackage;
 import com.geospark.reactnative.RNGeoSparkPackage;
 import com.facebook.react.ReactNativeHost;
@@ -47,6 +48,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
+            new RNLocationPackage(),
             new GeolocationPackage(),
         new MapsPackage()
       );

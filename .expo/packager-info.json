@@ -1,10 +1,10 @@
 {
   "webpackServerPort": null,
   "expoServerPort": 19000,
-  "expoServerNgrokUrl": "https://yk-86p.dkch.earthhack-app.exp.direct",
-  "packagerNgrokUrl": "https://packager.yk-86p.dkch.earthhack-app.exp.direct",
-  "ngrokPid": 35244,
+  "expoServerNgrokUrl": "https://yk-86p.anonymous.earthhack-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.yk-86p.anonymous.earthhack-app.exp.direct",
+  "ngrokPid": 12844,
   "packagerPort": 19001,
-  "packagerPid": 40284,
+  "packagerPid": 12831,
   "devToolsPort": 19002
 }
