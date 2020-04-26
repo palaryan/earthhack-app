@@ -123,8 +123,14 @@ export default class App extends Component {
 
   timetravel = () => {
     this.setState({loading: true})
-    console.log(this.state.hours)
-    this.setState({isModalVisible: false})
+    fetch(`http://54.183.39.121:1337/time_travel?x=${this.state.latitude}&y=${this.state.longitude}&radius=9999999&hours=${this.state.hours}`)
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json)
+        this.setState({points: json})
+        this.setState({loading: false})
+        this.setState({isModalVisible: false})
+    })
   }
 
   componentDidMount(){
@@ -136,7 +142,6 @@ export default class App extends Component {
       this.setState({ points: json });
     })
     .catch((error) => console.error(error))
-    this.setState({ points: require('./customData.json')})
   }
 
   mapStyle = [
