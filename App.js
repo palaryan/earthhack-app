@@ -34,12 +34,12 @@ export default class App extends Component {
       isCardVisible: false,
       hours: 0,
       searchReturn: {
-        title: 'Your House',
+        title: '',
         coordinates: {
-          latitude: 32.967990,
-          longitude: -96.996374
+          latitude: 0,
+          longitude: 0
         },
-        score: 10
+        score: 0
       },
       card: {},
       loading: false
@@ -85,35 +85,44 @@ export default class App extends Component {
 
   toggleCard = () => {
     this.setState({loading: true})
-    const distance = this.distance(this.state.glatitude, this.state.glongitude, this.state.searchReturn.coordinates.latitude, this.state.searchReturn.coordinates.longitude, 'M')
-    var color = ''
-    if (this.state.searchReturn.score > 75){
-      color = 'red'
-    } else if (this.state.searchReturn.score > 35) {
-      color = 'orange'
-    } else {
-      color = 'green'
-    }
-    var transportRec = ''
-    if (distance > 3) {
-      transportRec = 'This location is a bit far away. You should take a car or use an environmentally cleaner alternative. 🚗'
-    } else if (distance > 0.5) {
-      transportRec = 'This location isn\'t too far. You can get there easily with a bike. 🚴'
-    } else {
-      transportRec = 'This location is pretty close. You can easily walk! 🚶‍♂️'
-    }
-    this.setState({card: {
-      title: this.state.searchReturn.title,
-      score: `${this.state.searchReturn.score}%`,
-      distance: distance,
-      color: color,
-      transportRec: transportRec
-    }})
-    this.setState({loading: false})
-    this.setState({isCardVisible: !this.state.isCardVisible});
+    fetch(`http://54.183.39.121:1337/get_score?longbias=${this.state.glongitude}&latbias=${this.state.glatitude}&query=${this.state.search}`)
+    .then((response) => response.json())
+    .then((json) => {
+        console.log(json)
+        this.setState({ searchReturn: json });
+        const distance = this.distance(this.state.glatitude, this.state.glongitude, this.state.searchReturn.coordinates.latitude, this.state.searchReturn.coordinates.longitude, 'M')
+        var color = ''
+        if (this.state.searchReturn.score > 75){
+            color = 'red'
+        } else if (this.state.searchReturn.score > 35) {
+            color = 'orange'
+        } else {
+            color = 'green'
+        }
+        var transportRec = ''
+        if (distance > 3) {
+            transportRec = 'This location is a bit far away. You should take a car or use an environmentally cleaner alternative. 🚗'
+        } else if (distance > 0.5) {
+            transportRec = 'This location isn\'t too far. You can get there easily with a bike. 🚴'
+        } else {
+            transportRec = 'This location is pretty close. You can easily walk! 🚶‍♂️'
+        }
+        this.setState({card: {
+            title: this.state.searchReturn.title,
+            score: `${this.state.searchReturn.score}%`,
+            distance: distance,
+            color: color,
+            transportRec: transportRec,
+            latitude: this.state.searchReturn.coordinates.latitude,
+            longitude: this.state.searchReturn.coordinates.longitude
+        }})
+        this.setState({loading: false})
+        this.setState({isCardVisible: !this.state.isCardVisible});
+    })
   };
 
   timetravel = () => {
+    this.setState({loading: true})
     console.log(this.state.hours)
     this.setState({isModalVisible: false})
   }
@@ -127,6 +136,7 @@ export default class App extends Component {
       this.setState({ points: json });
     })
     .catch((error) => console.error(error))
+    this.setState({ points: require('./customData.json')})
   }
 
   mapStyle = [
@@ -534,9 +544,8 @@ export default class App extends Component {
           </MapView>
         </TouchableWithoutFeedback>
         <Image source={require('./assets/logo.png')} style={styles.logo}/>
-        <ActivityIndicator size="large" color="#0000ff" animating={this.state.loading}/>
         <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"}>
-          <TextInput placeholder="Find a location..." style={styles.searchBar} onChangeText={text => {this.setState({'search': text})}} onSubmitEditing={this.toggleCard}></TextInput>
+          <TextInput placeholder="Find a location..." style={styles.searchBar} onChangeText={text => {this.setState({ 'search': text })}} onSubmitEditing={this.toggleCard}></TextInput>
         </KeyboardAvoidingView>
         <View style={styles.buttonContainer}>
             <Button
@@ -555,6 +564,8 @@ export default class App extends Component {
           <View style={styles.modalContainer}>
           <TextInput placeholder="Hours to travel..." style={styles.searchBar} onChangeText={text => {this.setState({'hours': text})}} keyboardType='numeric'></TextInput>
             <Button title="Submit" onPress={this.timetravel} />
+            <Text>This neural network (RNN) algorithm can take up to 2 minutes to generate data.</Text>
+            <ActivityIndicator size="large" color="#0000ff" animating={this.state.loading}/>
           </View>
         </Modal>
         <Modal isVisible={this.state.isCardVisible} backdropColor='white'>

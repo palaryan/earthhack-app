@@ -1,10 +1,10 @@
 {
   "webpackServerPort": null,
   "expoServerPort": 19000,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://jv-q2r.dkch.earthhack-app.exp.direct",
+  "packagerNgrokUrl": "https://packager.jv-q2r.dkch.earthhack-app.exp.direct",
+  "ngrokPid": 13220,
   "packagerPort": 19001,
-  "packagerPid": 21116,
+  "packagerPid": 37168,
   "devToolsPort": 19002
 }
